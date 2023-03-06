@@ -12,7 +12,7 @@ namespace Gestione_Colletta
 {
     public partial class Form1 : Form
     {
-        Dictionary<string, float> colletta;
+        public Dictionary<string, float> colletta;
         public Form1()
         {
             InitializeComponent();
@@ -31,6 +31,23 @@ namespace Gestione_Colletta
 
         private void button1_Click(object sender, EventArgs e)
         {
+            aggiungi();
+        }
+
+        public void cancella()
+        {
+            colletta.Remove(listView1.SelectedItems[0].Text);
+            listview1.SelectedItems[0].Remove();
+        }
+
+        public void cambia()
+        {
+            cancella();
+            aggiungi();
+        }
+
+        public void aggiungi()
+        {
             if (colletta.ContainsKey(textBox1.Text))
             {
                 MessageBox.Show("Questa persona ha già effettuato un versamento!");
@@ -40,7 +57,16 @@ namespace Gestione_Colletta
                 string[] row = { textBox1.Text, textBox2.Text };
                 var listViewItem = new ListViewItem(row);
                 listView1.Items.Add(listViewItem);
-                colletta.Add(textBox1.Text, int.Parse(textBox2.Text));
+                colletta.Add(textBox1.Text, float.Parse(textBox2.Text));
+            }
+        }
+
+        public void totale()
+        {
+            float somma=0;
+            for(int i = 0; colletta.Count > i; i++) 
+            {
+                somma += colletta.ElementAt(i).Value;
             }
         }
     }
