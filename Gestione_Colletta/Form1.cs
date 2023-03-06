@@ -42,8 +42,8 @@ namespace Gestione_Colletta
 
         public void cambia()
         {
-            cancella();
-            aggiungi();
+            colletta[textBox1.Text]=textBox2.Text;
+            //da sistemare per la litview
         }
 
         public void aggiungi()
