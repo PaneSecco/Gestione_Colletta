@@ -75,6 +75,7 @@ namespace Gestione_Colletta
             {
                 versamento.Add(textBox1.Text, Int32.Parse(textBox2.Text));
                 valuta.Add(textBox1.Text, comboBox1.SelectedText);
+                //la combobox restituisce una stringa vuota, da sistemare
                 aggiorna();
                 textBox1.Text = "";
                 textBox2.Text = "";
@@ -90,6 +91,7 @@ namespace Gestione_Colletta
                 somma += versamento.ElementAt(i).Value;
             }
             label4.Text = "Totale: " + somma;
+            //da rendere universale per tutte le tipologie di valute
         }
 
         private void button2_Click(object sender, EventArgs e)
