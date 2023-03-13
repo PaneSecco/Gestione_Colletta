@@ -74,7 +74,7 @@ namespace Gestione_Colletta
             else
             {
                 versamento.Add(textBox1.Text, Int32.Parse(textBox2.Text));
-                valuta.Add(textBox1.Text, comboBox1.SelectedText);
+                valuta.Add(textBox1.Text, (String)comboBox1.SelectedItem);
                 //la combobox restituisce una stringa vuota, da sistemare
                 aggiorna();
                 textBox1.Text = "";
