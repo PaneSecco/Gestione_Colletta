@@ -38,7 +38,14 @@ namespace Gestione_Colletta
 
         private void button1_Click(object sender, EventArgs e)
         {
-            aggiungi();
+            if ( textBox1.Text==null || textBox2.Text == null || comboBox1.SelectedItem == null)
+            {
+
+            }
+            else
+            {
+                aggiungi();
+            }   
         }
 
         public void cancella()
@@ -75,7 +82,6 @@ namespace Gestione_Colletta
             {
                 versamento.Add(textBox1.Text, Int32.Parse(textBox2.Text));
                 valuta.Add(textBox1.Text, (String)comboBox1.SelectedItem);
-                //la combobox restituisce una stringa vuota, da sistemare
                 aggiorna();
                 textBox1.Text = "";
                 textBox2.Text = "";
@@ -96,7 +102,14 @@ namespace Gestione_Colletta
 
         private void button2_Click(object sender, EventArgs e)
         {
-            cancella();
+            if (textBox1.Text == null || textBox2.Text == null || comboBox1.SelectedItem == null)
+            {
+
+            }
+            else
+            {
+                cancella();
+            }
         }
 
       
@@ -114,10 +127,22 @@ namespace Gestione_Colletta
 
         private void button3_Click(object sender, EventArgs e)
         {
-            cambia();
+            if (textBox1.Text == null || textBox2.Text == null || comboBox1.SelectedItem == null)
+            {
+
+            }
+            else
+            {
+                cambia();
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
         }
